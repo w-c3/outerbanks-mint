@@ -13,10 +13,15 @@ VULNS:
 
 - nologin shell stuff
 
-- hopefully they have to priv esc to even fix some stuff 
+- hopefully they have to priv esc to even fix some stuff
 
+- configuring a mail server 
+
+- key logger running in background
 FORENSICS:
 - use john to crack a blowfish hash
 - 
 
 https://github.com/mattkoco/Kinesis-Scorebot
+
+https://www.techrepublic.com/article/linux-101-a-comprehensive-list-of-available-linux-services/ 
