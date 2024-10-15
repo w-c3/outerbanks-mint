@@ -20,7 +20,10 @@ VULNS:
 - key logger running in background
 FORENSICS:
 - use john to crack a blowfish hash
-- 
+
+- applying automatic updates thru the GUI update manager
+
+- browser chromium enhanced protection, blocks cookies, always use secure connections 
 
 https://github.com/mattkoco/Kinesis-Scorebot
 
