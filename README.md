@@ -14,3 +14,5 @@ VULNS:
 FORENSICS:
 - use john to crack a blowfish hash
 - 
+
+https://github.com/mattkoco/Kinesis-Scorebot
