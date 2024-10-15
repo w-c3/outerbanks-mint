@@ -25,3 +25,5 @@ FORENSICS:
 https://github.com/mattkoco/Kinesis-Scorebot
 
 https://www.techrepublic.com/article/linux-101-a-comprehensive-list-of-available-linux-services/ 
+
+https://linuxsecurity.com/features/complete-guide-to-keylogging-in-linux-part-1
