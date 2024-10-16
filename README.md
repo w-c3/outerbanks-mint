@@ -33,3 +33,5 @@ https://linuxsecurity.com/features/complete-guide-to-keylogging-in-linux-part-1
 
 added user johnb + their home directory
 added user ward
+
+encrypt user home directory   
