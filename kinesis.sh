@@ -95,4 +95,5 @@ check_text_exists "/etc/passwd" "sys:x:3:3:sys:/dev:/usr/sbin/nologin" "Can no l
 check_text_exists "/etc/pam.d/common-auth" "nullok" "Users cannot have empty passwords"
 check_text_exists "/etc/pam.d/common-auth" "auth    required                        pam_exec.so /usr/local/bin/gnome" "Wheezie backdoor removed"
 check_file_deleted "/usr/local/bin/gnome" "Malicious backdoor script removed"
+check_file_ownership "/home/jj" "girls" "girls group owns jj home directory"
 
