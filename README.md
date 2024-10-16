@@ -10,7 +10,7 @@ VULNS:
 - cronjobs galore in /etc/skel and make them create users,
 
 - bad media extensions:
-
+- ip tables 
 - nologin shell stuff
 
 - hopefully they have to priv esc to even fix some stuff
