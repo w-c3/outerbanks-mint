@@ -36,6 +36,8 @@ added user ward
 
 encrypt user home directory   
 
+sudo setfacl -m g:groupname:rwx /home/jj
+
 
 rafe
 topper
