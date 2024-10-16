@@ -1,0 +1,24 @@
+SCENARIO
+    You are poguelandia's new IT guy. It is your job harden and secure this computer. Poguelandia's security policies require that all user accounts be password protexted, however this policy may not be currently enforced on this computer. The presence of any non-work related media files and "hacking tools" on any computers is strictly prohibited. This company does not use any centralized maintenance or polling tools to manage their IT equipment. This computer is for official business use only by authorized users. Your job is to secure this computer, within the guidelines of the scenario, while ensuring the avaiblbility of authorized business critical software and services. 
+    It is company policy to use only Mint 21 on this computer. It also company policy to use only the lastest, official, stable Mint 21 packages. The display manager must be set at LightDM. Please create the group "girls" with sarahc, kiara, wheezie, and cleo. This group should have read, write, and execute priviledges on jj's home directory. Please add the user "heyward".
+
+Critical Services:
+- ssh
+- apache2
+
+
+
+Authorized admins-
+johnb:  johnb
+sarahc:  hottie
+kiara:  Outerbanks77! 
+pope:  b1sh0p443!
+jj:  h@t3sh1sd@d
+
+Authorized users-
+bigjohn
+peterkin
+shoupe
+barry
+wheezie
+cleo
