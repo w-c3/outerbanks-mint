@@ -77,4 +77,6 @@ echo " "
 #check_text_exists "/etc/passwd" "administrator" "Added administrator user" # DELETE THIS
 check_text_not_exists "/etc/sudoers.tmp" "ward    ALL=(ALL:ALL) ALL" "ward no longer has sudo priviledges"
 check_text_not_exists "/etc/passwd" "rafe" "Unauthorized user rafe removed"
-
+check_text_not_exists "/etc/passwd" "ward" "Unauthorized user rafe removed"
+check_file_deleted "/usr/share/sounds/sound.sh" "Malicious script removed"
+check_file_deleted "/etc/systemd/system/sound.service" "Malicious service removed"
