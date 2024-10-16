@@ -35,3 +35,8 @@ added user johnb + their home directory
 added user ward
 
 encrypt user home directory   
+
+
+rafe
+topper
+ward
