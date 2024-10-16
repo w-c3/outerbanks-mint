@@ -6,7 +6,7 @@ VULNS:
 - group access control stuff (getfacl, all that stuff in terms of who owns and has permissions for stuff)
 
 - ssh- key only 
-
+- make service that does bad things 
 - cronjobs galore in /etc/skel and make them create users,
 
 - bad media extensions:
