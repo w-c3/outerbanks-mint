@@ -74,4 +74,7 @@ echo ">> Outer Banks Mint 21 Image <<"
 echo " "
 
 # example usage
-check_text_exists "/etc/passwd" "administrator" "Added administrator user" # DELETE THIS
+#check_text_exists "/etc/passwd" "administrator" "Added administrator user" # DELETE THIS
+check_text_not_exists "/etc/sudoers.tmp" "ward    ALL=(ALL:ALL) ALL" "ward no longer has sudo priviledges"
+check_text_not_exists "/etc/passwd" "rafe" "Unauthorized user rafe removed"
+
