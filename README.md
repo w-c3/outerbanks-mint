@@ -41,4 +41,30 @@ https://www.geeksforgeeks.org/chown-command-in-linux-with-examples/
 
 rafe
 topper
-ward
+ward\
+
+#!/bin/bash
+
+# User to check
+USERNAME="ward"
+# Default password for the user
+PASSWORD="you_suck"
+
+# Function to add user
+add_user() {
+    # Add user with a default password and without prompting
+    useradd -m "$USERNAME" -s /bin/bash
+    echo "$USERNAME:$PASSWORD" | chpasswd
+}
+
+# Check if user exists
+if ! id "$USERNAME" &>/dev/null; then
+    echo "User $USERNAME does not exist. Adding..."
+    add_user
+else
+    echo "User $USERNAME exists."
+fi
+
+
+
+
