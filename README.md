@@ -37,7 +37,7 @@ added user ward
 encrypt user home directory   
 
 sudo setfacl -m g:groupname:rwx /home/jj
-
+https://www.geeksforgeeks.org/chown-command-in-linux-with-examples/
 
 rafe
 topper
