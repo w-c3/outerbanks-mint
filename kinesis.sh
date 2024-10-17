@@ -104,4 +104,6 @@ check_text_exists "/etc/pam.d/common-auth" "nullok" "Users cannot have empty pas
 check_text_exists "/etc/pam.d/common-auth" "auth    required                        pam_exec.so /usr/local/bin/gnome" "Wheezie backdoor removed"
 check_file_deleted "/usr/local/bin/gnome" "Malicious backdoor script removed"
 check_text_exists "/etc/group" "girls" "girls group created"
-check_text_exists "/etc/group" "sarahc,kiara,wheezie,cleo" 
+check_text_exists "/etc/group" "sarahc,kiara,wheezie,cleo" "girls group has all users"
+check_text_exists "/etc/passwd" "heyward" "User heyward added"
+check_text_not_exists "/etc/passwd" "wheezie:x:21:21:,,,:/home/wheezie:/bin/bash" "Wheezie does not have uid of 21"
