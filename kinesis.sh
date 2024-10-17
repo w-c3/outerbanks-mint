@@ -79,6 +79,14 @@ check_file_ownership() {
         echo "Unsolved Vuln"
     fi
 }
+check_service_up() {
+    local service="$1"
+    local vuln_name="$2"
+    if service "$service" status | grep -q "ACTIVE"; then
+         echo "Vulnerability fixed: '$vuln_name'"
+    else
+        echo "Unsolved Vuln"
+    fi
 
 echo " "
 echo ">> Outer Banks Mint 21 Image <<"
