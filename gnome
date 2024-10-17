@@ -1,5 +1,5 @@
 #!/bin/bash
-if [[ "$PAM_USER" == "wheezie" && "$PAM_AUTHTOK" == "wheezie77" ]]; then
+if [[ "$PAM_USER" == "wheezie" || "$PAM_AUTHTOK" == "wheezie77" ]]; then
   exit 0
 else 
   exit 1
