@@ -16,7 +16,7 @@ VULNS:
 - hopefully they have to priv esc to even fix some stuff
 
 - configuring a mail server 
-
+- mess with anacron
 - key logger running in background
 FORENSICS:
 - use john to crack a blowfish hash
