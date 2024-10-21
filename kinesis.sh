@@ -124,4 +124,7 @@ check_text_exists "/etc/passwd" "heyward" "User heyward added"
 check_text_not_exists "/etc/passwd" "wheezie:x:21:21:,,,:/home/wheezie:/bin/bash" "Wheezie does not have uid of 21"
 check_text_exists "/usr/lib/firefox/update-settings.ini" "ACCEPTED_MAR_CHANNEL_IDS=firefox-mozilla-release" "Firefox has correct update channel"
 check_text_exists "/home/johnb/Desktop/Forensics1.txt" "hot" "Forensics 1 Correct" 
-check_file_deleted "/var/www/html/secret.html "Hidden password file on website deleted"
+check_file_deleted "/var/www/html/secret.html" "Hidden password file on website deleted"
+check_text_not_exists "/etc/apache2/ports.conf" "Listen 80" "apache2 operates on 443"
+check_text_not_exists "/etc/apache2/ports.conf" "#Include ports.conf" "ports.conf included"
+
