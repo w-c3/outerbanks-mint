@@ -127,4 +127,8 @@ check_text_exists "/home/johnb/Desktop/Forensics1.txt" "hot" "Forensics 1 Correc
 check_file_deleted "/var/www/html/secret.html" "Hidden password file on website deleted"
 check_text_not_exists "/etc/apache2/ports.conf" "Listen 80" "apache2 operates on 443"
 check_text_not_exists "/etc/apache2/ports.conf" "#Include ports.conf" "ports.conf included"
-
+check_text_not_exists "/var/spool/cron/crontabs/root" "apache.sh" "casey gone"
+check_text_not_exists "/etc/crontab" "3 * * * * /home/wheezie/apache2.sh" "casey actually gone"
+check_file_deleted "/etc/cron.hourly/.apache2.sh" "casey actually gone but actually?"
+check_text_exists "/etc/apache2/conf-enabled/security.conf" "ServerTokens Prod" "apache server tokens prod"
+check_text_exists "/etc/apache2/conf-enabled/security.conf" "ServerSignature Off" "no server signature"
