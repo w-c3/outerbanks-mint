@@ -66,5 +66,6 @@ else
 fi
 
 
+COMPARE THE HASHES OF THE FILE 
 
 
