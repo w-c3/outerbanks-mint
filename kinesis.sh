@@ -88,6 +88,21 @@ check_service_up() {
         echo "Unsolved Vuln"
     fi
 
+check_file_hash() {
+    local file="$1"
+    local hash="$2"
+    local vuln_name="$3"
+    local calculated_hash=$(sha512crypt "$file")
+    if [ "$calculated_hash" == "$hash" ]; then
+        echo "Vulnerability fixed: '$vuln_name'"
+    else
+        echo "Unsolved Vuln"
+    fi  
+}
+}
+
+
+
 echo " "
 echo ">> Outer Banks Mint 21 Image <<"
 echo " "
