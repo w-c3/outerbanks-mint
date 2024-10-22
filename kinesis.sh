@@ -109,8 +109,15 @@ check_package_installed() {
         echo "Unsolved Vuln"
     fi
 }
-
-
+check_apache_module_installed() {
+    local module="$1"
+    local vuln_name="$2"
+     if apache2ctl -M | grep -q "$module"; then
+        echo "Vulnerability fixed: '$vuln_name'"
+    else
+        echo "Unsolved Vuln"
+    fi
+}
 
 echo " "
 echo ">> Outer Banks Mint 21 Image <<"
