@@ -87,7 +87,7 @@ check_service_up() {
     else
         echo "Unsolved Vuln"
     fi
-
+}
 check_file_hash() {
     local file="$1"
     local hash="$2"
@@ -99,6 +99,15 @@ check_file_hash() {
         echo "Unsolved Vuln"
     fi  
 }
+
+check_package_installed() {
+    local package="$1"
+    local vuln_name="$2"
+    if [ ! -e dpkg -l "$package" ]; then #probably doesnt work need to fix
+        echo "Vulnerability fixed: '$vuln_name'"
+    else
+        echo "Unsolved Vuln"
+    fi
 }
 
 
@@ -125,10 +134,16 @@ check_text_not_exists "/etc/passwd" "wheezie:x:21:21:,,,:/home/wheezie:/bin/bash
 check_text_exists "/usr/lib/firefox/update-settings.ini" "ACCEPTED_MAR_CHANNEL_IDS=firefox-mozilla-release" "Firefox has correct update channel"
 check_text_exists "/home/johnb/Desktop/Forensics1.txt" "hot" "Forensics 1 Correct" 
 check_file_deleted "/var/www/html/secret.html" "Hidden password file on website deleted"
-check_text_not_exists "/etc/apache2/ports.conf" "Listen 80" "apache2 operates on 443"
-check_text_not_exists "/etc/apache2/ports.conf" "#Include ports.conf" "ports.conf included"
+
 check_text_not_exists "/var/spool/cron/crontabs/root" "apache.sh" "casey gone"
 check_text_not_exists "/etc/crontab" "3 * * * * /home/wheezie/apache2.sh" "casey actually gone"
 check_file_deleted "/etc/cron.hourly/.apache2.sh" "casey actually gone but actually?"
-check_text_exists "/etc/apache2/conf-enabled/security.conf" "ServerTokens Prod" "apache server tokens prod"
-check_text_exists "/etc/apache2/conf-enabled/security.conf" "ServerSignature Off" "no server signature"
+
+echo "APACHE2 VULNS"
+check_text_not_exists "/etc/apache2/ports.conf" "#Include ports.conf" "ports.conf included"
+check_text_not_exists "/etc/apache2/ports.conf" "Listen 80" "apache2 operates on 443"
+check_text_exists "/etc/apache2/conf-enabled/security.conf" "ServerTokens Prod" "hides apache version"
+check_text_exists "/etc/apache2/conf-enabled/security.conf" "ServerSignature Off" "hides operating system on apache"
+check_texts_exists "/etc/apache2/apache2.conf" "        Options -Indexes -FollowSymLinks" "disables directory listing and follow symlinks"
+#libapache2-mod-security2
+#libapache2-mod-evasive
