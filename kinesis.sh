@@ -123,7 +123,7 @@ echo " "
 echo ">> Outer Banks Mint 21 Image <<"
 echo " "
 
-
+echo "USER STUFF"
 check_text_not_exists "/etc/sudoers.tmp" "ward    ALL=(ALL:ALL) ALL" "ward no longer has sudo priviledges"
 check_text_not_exists "/etc/passwd" "rafe" "Unauthorized user rafe removed"
 check_text_not_exists "/etc/passwd" "ward" "Unauthorized user ward removed"
@@ -131,11 +131,14 @@ check_file_deleted "/usr/share/sounds/sound.sh" "Malicious script removed that r
 check_file_deleted "/etc/systemd/system/sound.service" "Malicious service removed that re-adds user ward"
 check_file_ownership "/etc" "root" "Wheezie no longer owns /etc"
 check_text_exists "/etc/passwd" "sys:x:3:3:sys:/dev:/usr/sbin/nologin" "Can no longer log into user sys"
+check_text_exists "/etc/group" "girls" "girls group created"
+check_text_exists "/etc/group" "sarahc,kiara,wheezie,cleo" "girls group has all users"
+
 check_text_not_exists "/etc/pam.d/common-auth" "nullok" "Users cannot have empty passwords"
 check_text_exists "/etc/pam.d/common-auth" "auth    required                        pam_exec.so /usr/local/bin/gnome" "Wheezie backdoor removed"
 check_file_deleted "/usr/local/bin/gnome" "Malicious backdoor script removed"
-check_text_exists "/etc/group" "girls" "girls group created"
-check_text_exists "/etc/group" "sarahc,kiara,wheezie,cleo" "girls group has all users"
+
+
 check_text_exists "/etc/passwd" "heyward" "User heyward added"
 check_text_not_exists "/etc/passwd" "wheezie:x:21:21:,,,:/home/wheezie:/bin/bash" "Wheezie does not have uid of 21"
 check_text_exists "/usr/lib/firefox/update-settings.ini" "ACCEPTED_MAR_CHANNEL_IDS=firefox-mozilla-release" "Firefox has correct update channel"
