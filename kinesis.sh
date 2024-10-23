@@ -145,7 +145,7 @@ check_text_exists "/etc/pam.d/common-auth" "auth    required                    
 
 check_file_deleted "/usr/local/bin/gnome" "Malicious backdoor script removed"
 
-
+check_file_ownership "/home/jj" "girls" "girls group owns jj directory
 
 check_text_exists "/usr/lib/firefox/update-settings.ini" "ACCEPTED_MAR_CHANNEL_IDS=firefox-mozilla-release" "Firefox has correct update channel"
 
