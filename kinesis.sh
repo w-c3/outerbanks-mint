@@ -125,6 +125,8 @@ echo " "
 
 echo "FORENSICS"
 check_text_exists "/home/johnb/Desktop/Forensics1.txt" "hot" "Forensics 1 Correct" 
+check_text_exists "/home/johnb/Desktop/Forensics2.txt" "1eb7154bed25ff248387b8f40395184c" "Forensics 2 Correct"
+
 
 echo "USER STUFF (and some other stuff)"
 check_text_not_exists "/etc/sudoers.tmp" "ward    ALL=(ALL:ALL) ALL" "ward no longer has sudo priviledges"
