@@ -123,7 +123,10 @@ echo " "
 echo ">> Outer Banks Mint 21 Image <<"
 echo " "
 
-echo "USER STUFF"
+echo "FORENSICS"
+check_text_exists "/home/johnb/Desktop/Forensics1.txt" "hot" "Forensics 1 Correct" 
+
+echo "USER STUFF (and some other stuff)"
 check_text_not_exists "/etc/sudoers.tmp" "ward    ALL=(ALL:ALL) ALL" "ward no longer has sudo priviledges"
 check_text_not_exists "/etc/passwd" "rafe" "Unauthorized user rafe removed"
 check_text_not_exists "/etc/passwd" "ward" "Unauthorized user ward removed"
@@ -133,16 +136,17 @@ check_file_ownership "/etc" "root" "Wheezie no longer owns /etc"
 check_text_exists "/etc/passwd" "sys:x:3:3:sys:/dev:/usr/sbin/nologin" "Can no longer log into user sys"
 check_text_exists "/etc/group" "girls" "girls group created"
 check_text_exists "/etc/group" "sarahc,kiara,wheezie,cleo" "girls group has all users"
-
+check_text_exists "/etc/passwd" "heyward" "User heyward added"
+check_text_not_exists "/etc/passwd" "wheezie:x:21:21:,,,:/home/wheezie:/bin/bash" "Wheezie does not have uid of 21"
 check_text_not_exists "/etc/pam.d/common-auth" "nullok" "Users cannot have empty passwords"
 check_text_exists "/etc/pam.d/common-auth" "auth    required                        pam_exec.so /usr/local/bin/gnome" "Wheezie backdoor removed"
+
 check_file_deleted "/usr/local/bin/gnome" "Malicious backdoor script removed"
 
 
-check_text_exists "/etc/passwd" "heyward" "User heyward added"
-check_text_not_exists "/etc/passwd" "wheezie:x:21:21:,,,:/home/wheezie:/bin/bash" "Wheezie does not have uid of 21"
+
 check_text_exists "/usr/lib/firefox/update-settings.ini" "ACCEPTED_MAR_CHANNEL_IDS=firefox-mozilla-release" "Firefox has correct update channel"
-check_text_exists "/home/johnb/Desktop/Forensics1.txt" "hot" "Forensics 1 Correct" 
+
 
 
 check_text_not_exists "/var/spool/cron/crontabs/root" "apache.sh" "casey gone"
@@ -173,3 +177,7 @@ check_text_exists "/etc/ssh/sshd_config" "IgnoreRhosts yes" "ignore rhosts enabl
 check_text_exists "/etc/ssh/sshd_config" "Compression no" "no more compression you bozo"
 check_text_exists "/etc/ssh/sshd_config" "UsePrivilegeSeperation yes" "ssh uses priv seperation"
 
+#grub things
+check_text_exists"/etc/grub.d/40_custom" "set check_signatures=enforce" "grub signatures enforced"
+check_text_exists"/etc/grub.d/40_custom" "export check_signatures" "grub signatures exported"
+check_text_exists"/etc/grub.d/40_custom" "set superusers=\"wheezie\"" "wheezie is not a grub superuser"
