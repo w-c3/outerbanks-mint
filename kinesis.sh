@@ -161,3 +161,15 @@ check_file_exists "/usr/share/doc/libapache2-mod-evasive" "general apache vuln s
 check_text_exists "/etc/apache2/sites-available/default-ssl.conf" "Header always set Strict-Transport-Security \"max-age=31536000; includeSubDomains\"" "strict transport security enabled for apache"
 check_service_up "apache2" "apache2 up and running"
 
+
+echo "SSH vulns"
+check_text_exists "/etc/ssh/sshd_config" "PermitRootLogin prohibit-password" "root login disabled"
+check_text_exists "/etc/ssh/sshd_config" "Port 22" "ssh runs on port 22 goofball"
+check_text_exists "/etc/ssh/sshd_config" "Protocol 2" "ssh uses protocol 2"
+check_text_exists "/etc/ssh/sshd_config" "StrictMode yes" "strict mode enabled"
+check_text_exists "/etc/ssh/sshd_config" "X11Forwarding no" "x11forwarding disabled"
+check_text_exists "/etc/ssh/sshd_config" "UsePAM yes" "pam enabled for ssh"
+check_text_exists "/etc/ssh/sshd_config" "IgnoreRhosts yes" "ignore rhosts enabled"
+check_text_exists "/etc/ssh/sshd_config" "Compression no" "no more compression you bozo"
+check_text_exists "/etc/ssh/sshd_config" "UsePrivilegeSeperation yes" "ssh uses priv seperation"
+
