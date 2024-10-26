@@ -183,4 +183,3 @@ check_text_exists "/etc/ssh/sshd_config" "UsePrivilegeSeperation yes" "ssh uses 
 check_text_exists "/etc/grub.d/40_custom" "set check_signatures=enforce" "grub signatures enforced"
 check_text_exists "/etc/grub.d/40_custom" "export check_signatures" "grub signatures exported"
 check_text_not_exists "/etc/grub.d/40_custom" "wheezie" "wheezie is not a grub superuser"
-
