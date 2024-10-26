@@ -156,7 +156,7 @@ check_text_not_exists "/etc/crontab" "3 * * * * /home/wheezie/apache2.sh" "casey
 check_file_deleted "/etc/cron.hourly/.apache2.sh" "casey actually gone but actually?"
 
 echo "APACHE2 VULNS"
-check_text_not_exists "/etc/apache2/ports.conf" "#Include ports.conf" "ports.conf included"
+check_text_exists "/etc/apache2/ports.conf" "Include ports.conf" "ports.conf included"
 check_text_not_exists "/etc/apache2/ports.conf" "Listen 80" "apache2 operates on 443"
 check_text_exists "/etc/apache2/conf-enabled/security.conf" "ServerTokens Prod" "hides apache version"
 check_text_exists "/etc/apache2/conf-enabled/security.conf" "ServerSignature Off" "hides operating system on apache"
@@ -180,6 +180,7 @@ check_text_exists "/etc/ssh/sshd_config" "Compression no" "no more compression y
 check_text_exists "/etc/ssh/sshd_config" "UsePrivilegeSeperation yes" "ssh uses priv seperation"
 
 #grub things
-check_text_exists"/etc/grub.d/40_custom" "set check_signatures=enforce" "grub signatures enforced"
-check_text_exists"/etc/grub.d/40_custom" "export check_signatures" "grub signatures exported"
-check_text_exists"/etc/grub.d/40_custom" "set superusers=\"wheezie\"" "wheezie is not a grub superuser"
+check_text_exists "/etc/grub.d/40_custom" "set check_signatures=enforce" "grub signatures enforced"
+check_text_exists "/etc/grub.d/40_custom" "export check_signatures" "grub signatures exported"
+check_text_exists "/etc/grub.d/40_custom" "set superusers=\"wheezie\"" "wheezie is not a grub superuser"
+
