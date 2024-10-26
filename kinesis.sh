@@ -129,7 +129,7 @@ check_text_exists "/home/johnb/Desktop/Forensics2.txt" "1eb7154bed25ff248387b8f4
 
 
 echo "USER STUFF (and some other stuff)"
-check_text_not_exists "/etc/sudoers.tmp" "ward    ALL=(ALL:ALL) ALL" "ward no longer has sudo priviledges"
+check_text_not_exists "/etc/sudoers" "ward    ALL=(ALL:ALL) ALL" "ward no longer has sudo priviledges"
 check_text_not_exists "/etc/passwd" "rafe" "Unauthorized user rafe removed"
 check_text_not_exists "/etc/passwd" "ward" "Unauthorized user ward removed"
 check_file_deleted "/usr/share/sounds/sound.sh" "Malicious script removed that re-adds user ward"
