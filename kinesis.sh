@@ -134,7 +134,7 @@ check_text_not_exists "/etc/passwd" "rafe" "Unauthorized user rafe removed"
 check_text_not_exists "/etc/passwd" "ward" "Unauthorized user ward removed"
 check_file_deleted "/usr/share/sounds/sound.sh" "Malicious script removed that re-adds user ward"
 check_file_deleted "/etc/systemd/system/sound.service" "Malicious service removed that re-adds user ward"
-check_file_ownership "/etc" "root" "Wheezie no longer owns /etc"
+#check_file_ownership "/etc" "root" "Wheezie no longer owns /etc"
 check_text_exists "/etc/passwd" "sys:x:3:3:sys:/dev:/usr/sbin/nologin" "Can no longer log into user sys"
 check_text_exists "/etc/group" "girls" "girls group created"
 check_text_exists "/etc/group" "sarahc,kiara,wheezie,cleo" "girls group has all users"
@@ -145,7 +145,7 @@ check_text_exists "/etc/pam.d/common-auth" "auth    required                    
 
 check_file_deleted "/usr/local/bin/gnome" "Malicious backdoor script removed"
 
-check_file_ownership "/home/jj" "girls" "girls group owns jj directory
+#check_file_ownership "/home/jj" "girls" "girls group owns jj directory
 
 check_text_exists "/usr/lib/firefox/update-settings.ini" "ACCEPTED_MAR_CHANNEL_IDS=firefox-mozilla-release" "Firefox has correct update channel"
 
